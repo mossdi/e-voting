@@ -1,0 +1,535 @@
+@import url('https://fonts.googleapis.com/css?family=Cuprum:400,400i,700,700i&subset=cyrillic');
+
+html,
+body {
+    font-family: 'Cuprum', sans-serif;
+    font-size: 16px;
+}
+
+body {
+    background: url(/image/background/line_bg_opacity_05.png) no-repeat fixed top right;
+    background-size: contain;
+}
+
+.wrap {
+    min-height: 100%;
+    height: auto;
+    margin: 0 auto -60px;
+    padding: 0 0 60px;
+}
+
+.wrap > .container {
+    padding: 70px 15px 20px;
+}
+
+.not-set {
+    color: #c55;
+    font-style: italic;
+}
+
+/* header */
+.main-header .navbar {
+    margin-bottom: 0;
+}
+
+.main-header a.logo img {
+    display: block;
+    padding: 0px;
+    max-height: 60px;
+}
+
+.main-header .logo-description {
+    padding: 0px 5px 0px 15px;
+    line-height: normal;
+}
+
+.main-header .logo-description strong:first-child {
+    font-size: 32px;
+}
+
+.main-header .logo-description strong:last-child {
+    letter-spacing: 9.8px;
+    font-size: 20px;
+}
+
+.main-header .users-online {
+    font-weight: bold;
+    color: #00a65a;
+}
+
+.main-header .now-title {
+    font-size: 28px;
+}
+
+.wrapper.guest .main-header {
+    padding: 25px 45px;
+    background: linear-gradient(to bottom, rgba(95, 116, 129, 1.0), rgba(95, 116, 129, 1.0), rgba(95, 116, 129, 0.7));
+    color: #fff;
+}
+
+.wrapper.admin .main-header .logo img {
+    display: none;
+}
+
+.main-header .col-admin-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
+.main-header .col-admin-menu ul > li.admin-menu > a {
+    display: block;
+    background: rgba(95, 116, 129, 1);
+    padding: 10px 30px;
+    color: #fff;
+    border-radius: 0 0 20px 0;
+    border-right: 4px solid rgba(217, 83, 78, 0.71);
+    border-bottom: 4px solid rgba(221, 221, 221, 0.71);
+}
+
+.main-header .col-admin-menu ul > li.admin-menu > ul.dropdown-menu {
+    padding: 0;
+}
+
+.main-header .col-admin-menu ul > li.admin-menu > ul.dropdown-menu > li > a {
+    padding: 15px;
+    text-transform: uppercase;
+}
+
+.main-header .col-admin-menu ul > li.admin-menu > ul.dropdown-menu > li.active > a {
+    background-color: #999999;
+}
+
+/* content */
+.now-speech .collective {
+    padding: 20px;
+}
+
+.now-speech .theme {
+    padding: 50px 45px;
+}
+
+.now-speech .member {
+    padding: 30px 45px;
+}
+
+.now-speech .collective {
+    background: rgba(123, 218, 230, 0.8);
+    font-size: 28px;
+}
+
+.now-speech .collective table tr td > img {
+    max-width: 150px;
+    margin-right: 5px;
+}
+
+.now-speech .collective table tr td > span.name {
+    font-weight: bold;
+}
+
+.now-speech .theme {
+    background: rgba(255, 255, 255, 0.3);
+    font-size: 32px;
+    color: #a94442;
+}
+
+.now-speech .member {
+    background: rgba(255, 255, 255, 0.5);
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.now-speech .sort_order > span {
+    display: block;
+    color: #fff;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    border: 5px solid #fff;
+    border-radius: 2px;
+    padding: 20px 25px;
+    margin-left: 20px;
+    background: rgba(95, 116, 129, 0.9);
+}
+
+/* footer */
+.main-footer {
+    padding: 40px 45px;
+    background: linear-gradient(to top, rgba(95, 116, 129, 1.0), rgba(95, 116, 129, 0.5));
+}
+
+.main-footer .support-logo img {
+    max-height: 50px;
+    display: inline-block;
+}
+
+/* forms */
+.site-criterion {
+    margin-top: -15px;
+}
+
+.site-criterion .form-group {
+    margin-bottom: -15px;
+    margin-left: -15px;
+    margin-right: -15px;
+    padding: 15px;
+    background: #2f383c;
+}
+
+.site-criterion label {
+    font-weight: normal;
+    color: #fff;
+    font-size: 22px;
+}
+
+.site-criterion label > strong {
+    font-size: 26px;
+}
+
+.site-criterion form#criterion-form > div.criterion-item {
+    padding-bottom: 15px;
+    padding-top: 15px;
+    border-bottom: 2px solid #fff;
+}
+
+.site-criterion .buttons button {
+    width: 200px;
+    max-width: 90%;
+    padding: 15px;
+    text-transform: uppercase;
+}
+
+.site-criterion .number {
+    font-size: 50px;
+    color: #fff;
+}
+
+.site-criterion .rating-container .empty-stars {
+    color: rgba(255, 235, 59, 0.65);
+}
+
+.site-criterion .has-success .control-label {
+    color: #ffffff;
+}
+
+.wrapper.guest .modal-header {
+    border-bottom-color: #f4f4f4;
+    background: #2f383c;
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 24px;
+}
+
+.top-title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* add sorting icons to gridview sort links */
+a.asc:after, a.desc:after {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    padding-left: 5px;
+}
+
+a.asc:after {
+    content: /*"\e113"*/ "\e151";
+}
+
+a.desc:after {
+    content: /*"\e114"*/ "\e152";
+}
+
+.sort-numerical a.asc:after {
+    content: "\e153";
+}
+
+.sort-numerical a.desc:after {
+    content: "\e154";
+}
+
+.sort-ordinal a.asc:after {
+    content: "\e155";
+}
+
+.sort-ordinal a.desc:after {
+    content: "\e156";
+}
+
+.grid-view th {
+    white-space: nowrap;
+}
+
+.hint-block {
+    display: block;
+    margin-top: 5px;
+    color: #999;
+}
+
+.error-summary {
+    color: #a94442;
+    background: #fdf7f7;
+    border-left: 3px solid #eed3d7;
+    padding: 10px 20px;
+    margin: 0 0 15px 0;
+}
+
+/* align the logout "link" (button in form) of the navbar */
+.nav li > form > button.logout {
+    padding: 15px;
+    border: none;
+}
+
+@media(max-width:767px) {
+    .nav li > form > button.logout {
+        display:block;
+        text-align: left;
+        width: 100%;
+        padding: 10px 15px;
+    }
+}
+
+.nav > li > form > button.logout:focus,
+.nav > li > form > button.logout:hover {
+    text-decoration: none;
+}
+
+.nav > li > form > button.logout:focus {
+    outline: none;
+}
+
+/* inputs */
+input.form-control {
+    margin-bottom: 10px;
+}
+
+/* modal window */
+#modalForm .modal-header .close {
+    color: red;
+}
+
+@media (min-width: 768px) {
+    #modalForm .modal-dialog {
+        width: 718px;
+        margin: 30px auto;
+    }
+}
+
+/* Nav tabs */
+#appAdmin ul.nav-tabs {
+    border-bottom: 0;
+}
+
+#appAdmin ul.nav-tabs > li {
+    margin-bottom: 0;
+}
+
+#appAdmin ul.nav-tabs > li > a {
+    border: 0;
+}
+
+#appAdmin ul.nav-tabs > li > a:hover,
+#appAdmin ul.nav-tabs > li > a:active,
+#appAdmin ul.nav-tabs > li > a:focus {
+    background: none;
+}
+
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+    background: none;
+}
+
+/* grid view */
+div.grid-view {
+    overflow-x: scroll;
+}
+
+.grid-view .table-bordered {
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.grid-view .table-bordered > thead {
+    background: rgba(95, 116, 129, 0.6);
+    text-transform: uppercase;
+}
+
+.grid-view .table-bordered > thead > tr,
+.grid-view .table-bordered > tbody > tr {
+    border-bottom: 1px solid rgba(95, 116, 129, 0.2);;
+}
+
+.grid-view .table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: rgba(249, 249, 249, 0.7);
+}
+
+.grid-view .table-bordered > tbody > tr > td:first-child {
+    text-align: center;
+    font-weight: bold;
+}
+
+.grid-view .table-bordered {
+    margin-bottom: 0;
+}
+
+.grid-view .table-bordered,
+.grid-view .table-bordered > thead > tr > th,
+.grid-view .table-bordered > tbody > tr > th,
+.grid-view .table-bordered > tfoot > tr > th,
+.grid-view .table-bordered > thead > tr > td,
+.grid-view .table-bordered > tbody > tr > td,
+.grid-view .table-bordered > tfoot > tr > td {
+    border: 0;
+}
+
+.grid-view .table-bordered > thead > tr > th > a,
+.grid-view .table-bordered > tbody > tr > td > a {
+    color: #000000;
+}
+
+.grid-view .table-bordered > tbody > tr > td > img {
+    max-width: 100px;
+}
+
+.grid-view .completed {
+    opacity: 0.2;
+}
+
+/* timer */
+.timer {
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 140px;
+    font-size: 20px;
+    padding: 10px 15px;
+    background: #f8f8f8;
+}
+
+/* login */
+.login-page {
+    background-color: #5f7481;
+}
+
+.login-page::before {
+    content: '';
+    background: url(/image/background/line_bg.png) top right no-repeat;
+    background-size: contain;
+    position: absolute;
+    opacity: 0.8;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.login-page .moscow-logo {
+    position: absolute;
+    right: 25px;
+    top: 20px;
+}
+
+.login-page .about {
+    position: absolute;
+    top: 20%;
+    left: 15px;
+    color: #fff;
+    line-height: normal;
+}
+
+.login-page .about .title {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.login-page .about .department {
+    font-size: 30px;
+}
+
+.login-page .login-box {
+    position: absolute;
+    width: 100%;
+}
+
+.login-page .login-box .login-box-body {
+    width: 340px;
+    max-width: 90%;
+    margin: 20px auto;
+    text-align: center;
+    color: #ffffff;
+    text-transform: uppercase;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+}
+
+.login-page .login-box .login-box-body .glyphicon {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.login-page .power {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    padding-top: 40px;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.login-page .power .location-logo{
+    margin-bottom: 20px;
+}
+
+.login-page .power .copyright {
+    background: rgba(255, 255, 255, 0.1);
+    padding-bottom: 5px;
+    padding-top: 5px;
+    color: #dddddd;
+}
+
+.login-page .power .support-logo {
+    background: rgba(255, 255, 255, 0.0);
+}
+
+.login-page .power .location-logo {
+    background: rgba(255, 255, 255, 0.0);
+}
+
+.login-page .power hr {
+    position: relative;
+    z-index: -1;
+    border-top: 4px solid #fff;
+}
+
+/* tables */
+table.table-responsive {
+    width: 100%;
+}
+
+.table > thead > tr > th,
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > td,
+.table > tfoot > tr > td {
+    padding: 15px;
+}
+
+/* additional */
+.col-margin-bottom-10 {
+    margin-bottom: 10px;
+}
+
+.col-padding-15-25 {
+    padding:15px 25px 15px 15px;
+}
+
+.col-padding-15-45 {
+    padding:15px 45px 15px 15px;
+}
