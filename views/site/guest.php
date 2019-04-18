@@ -15,8 +15,6 @@ app\assets\VueGuestAsset::register($this);
         <?= $this->render('/html_block/speech_now') ?>
     </template>
     <template v-else>
-        <?= $this->render('/html_block/speech_list', [
-        	'speechList' => $speechList,
-		]) ?>
+        <?= $this->render('/html_block/speech_list', ['speechList' => $speechList]) ?>
     </template>
 </div>
