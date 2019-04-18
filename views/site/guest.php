@@ -17,6 +17,6 @@ app\assets\VueGuestAsset::register($this);
     <template v-else>
         <?= $this->render('/html_block/speech_list', [
         	'speechList' => $speechList,
-       	]) ?>
+		]) ?>
     </template>
 </div>
