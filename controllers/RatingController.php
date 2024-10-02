@@ -68,9 +68,7 @@ class RatingController extends Controller
 
             Yii::$app->session->setFlash($result['status'], $result['message']);
 
-            $this->redirect(
-                '/site/index'
-            );
+            $this->redirect('/site/index');
         }
     }
 

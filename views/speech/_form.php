@@ -41,8 +41,7 @@ use froala\froalaeditor\FroalaEditorWidget;
 
     <?= $form->field($model, 'file')->fileInput() ?>
 
-    <?= $form->field($model, 'sort_order')->textInput()
-        ->label('Порядок сортировки') ?>
+    <?= $form->field($model, 'sort_order')->textInput()->label('Порядок сортировки') ?>
 
     <?= $form->field($model, 'status')->dropDownList(Speech::$statusList) ?>
 

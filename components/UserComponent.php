@@ -70,7 +70,7 @@ class UserComponent
         $userRole = Yii::$app->authManager->getRole($role);
 
         try {
-            return Yii::$app->authManager->assign($userRole, $user->id) ? true : false;
+            return (bool)Yii::$app->authManager->assign($userRole, $user->id);
         } catch (\Exception $e) {
             echo $e->getMessage();
         }

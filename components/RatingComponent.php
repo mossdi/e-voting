@@ -42,7 +42,6 @@ class RatingComponent
 
         $rating = Rating::create(
             $nowSpeech->id,
-
             $form->efficiency,
             $form->newness,
             $form->originality,
@@ -50,12 +49,14 @@ class RatingComponent
             $form->acceptance
         );
 
-        return $rating->save() ? [
-            'status'  => 'success',
-            'message' => 'Ваши оценки учтены! Спасибо!'
-        ] : [
-            'status'  => 'error',
-            'message' => 'Ошибка. Голоса не учтены! Попробуйте ещё раз!'
-        ];
+        return $rating->save()
+            ? [
+                'status'  => 'success',
+                'message' => 'Ваши оценки учтены! Спасибо!'
+            ]
+            : [
+                'status'  => 'error',
+                'message' => 'Ошибка. Голоса не учтены! Попробуйте ещё раз!'
+            ];
     }
 }

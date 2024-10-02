@@ -25,6 +25,7 @@ class RoleController extends Controller
         Yii::$app->authManager->add($role);
 
         echo 'Роль ' . $role->name . ' добавлена!' . PHP_EOL;
+
         return ExitCode::OK;
     }
 
@@ -39,6 +40,7 @@ class RoleController extends Controller
 
         if (!$user) {
             echo 'Пользователь c номером ' . $user_phone . ' не найден' . "\n";
+
             return ExitCode::NOUSER;
         }
 
@@ -51,6 +53,7 @@ class RoleController extends Controller
         }
 
         echo 'Пользователю ' . $user->first_name . ' ' . $user->last_name . ' присвоена роль . ' . $role . '!' . "\n";
+
         return ExitCode::OK;
     }
 }

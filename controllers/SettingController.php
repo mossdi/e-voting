@@ -59,9 +59,7 @@ class SettingController extends Controller
 
         Yii::$app->session->setFlash('success', 'Все гости удалены!');
 
-        $this->redirect(
-            '/site/setting'
-        );
+        $this->redirect('/site/setting');
     }
 
     public function actionClearAllRating()
@@ -70,9 +68,7 @@ class SettingController extends Controller
 
         Yii::$app->session->setFlash('success', 'Рейтинги очищены!');
 
-        $this->redirect(
-            '/site/setting'
-        );
+        $this->redirect('/site/setting');
     }
 
     public function actionClearAllInterval()
@@ -82,9 +78,7 @@ class SettingController extends Controller
 
         Yii::$app->session->setFlash('success', 'Временные метки удалены!');
 
-        $this->redirect(
-            '/site/setting'
-        );
+        $this->redirect('/site/setting');
     }
 
     public function actionSetConcludingSetting($value)
@@ -98,9 +92,7 @@ class SettingController extends Controller
             Yii::$app->session->setFlash('success', 'Ошибка!');
         }
 
-        $this->redirect(
-            '/site/concluding'
-        );
+        $this->redirect('/site/concluding');
     }
 
     public function actionSetCriterionSetting($value)
@@ -114,8 +106,6 @@ class SettingController extends Controller
             Yii::$app->session->setFlash('success', 'Ошибка!');
         }
 
-        $this->redirect(
-            '/site/concluding'
-        );
+        $this->redirect('/site/concluding');
     }
 }

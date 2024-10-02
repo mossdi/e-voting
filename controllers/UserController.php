@@ -54,10 +54,8 @@ class UserController extends Controller
 
         $this->layout = 'main_login';
 
-        if (Yii::$app->request->post()) {
-            if ((new LoginComponent())->login()) {
-                $this->refresh();
-            };
+        if (Yii::$app->request->post() && (new LoginComponent())->login()) {
+            $this->refresh();
         }
 
         return $this->render('login');
@@ -79,10 +77,8 @@ class UserController extends Controller
         $form = new LoginForm();
         $form->scenario = LoginForm::SCENARIO_ADMIN;
 
-        if ($form->load(Yii::$app->request->post()) && $form->validate()) {
-            if ((new LoginComponent())->loginAdmin($form)) {
-                $this->refresh();
-            };
+        if ($form->load(Yii::$app->request->post()) && $form->validate() && (new LoginComponent())->loginAdmin($form)) {
+            $this->refresh();
         }
 
         $form->password = '';
@@ -162,7 +158,7 @@ class UserController extends Controller
                 Yii::$app->session->setFlash('success', 'Пользователь успешно зарегистрирован в системе.');
             } else {
                 Yii::$app->session->setFlash('error', 'Ошибка. Пользователь не зарегистрирован. Обратитесь к администратору системы.');
-            };
+            }
 
             $this->redirect(
                 '/site/index'

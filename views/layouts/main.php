@@ -24,27 +24,15 @@ app\assets\AppAsset::register($this);
 <body>
 <?php $this->beginBody() ?>
 <div class="wrapper <?= !Yii::$app->user->can('admin') ? 'guest' : 'admin' ?>">
-    <?= $this->render(
-        '/element/timer.php'
-    ) ?>
+    <?= $this->render('/element/timer.php') ?>
 
-    <?= $this->render(
-        '/element/modal.php'
-    ) ?>
+    <?= $this->render('/element/modal.php') ?>
 
-    <?= $this->render(
-        'header.php'
-    ) ?>
+    <?= $this->render('header.php') ?>
 
-    <?= $this->render(
-        'content.php', [
-            'content' => $content
-        ]
-    ) ?>
+    <?= $this->render('content.php', ['content' => $content]) ?>
 
-    <?= $this->render(
-        'footer.php'
-    ) ?>
+    <?= $this->render('footer.php') ?>
 </div>
 <?php $this->endBody() ?>
 </body>

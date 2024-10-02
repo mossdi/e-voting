@@ -103,7 +103,7 @@ class VueDataController extends Controller
         $speechStart->speech_id = $id;
         $speechStart->speech_start = time();
 
-        return $speechStart->save() ? true : false;
+        return (bool)$speechStart->save();
     }
 
     /**
@@ -115,7 +115,7 @@ class VueDataController extends Controller
         $speechNow = SpeechTime::findOne($id);
         $speechNow->updateAttributes(['voting_start' => time()]);
 
-        return ($speechNow->voting_start != null) ? true : false;
+        return $speechNow->voting_start != null;
     }
 
     /**
@@ -127,7 +127,7 @@ class VueDataController extends Controller
         $speechNow = SpeechTime::findOne($id);
         $speechNow->updateAttributes(['voting_end' => time()]);
 
-        return ($speechNow->voting_end != null) ? true : false;
+        return $speechNow->voting_end != null;
     }
 
     /**
@@ -142,7 +142,7 @@ class VueDataController extends Controller
             'speech_id' => $rawBody['speechID']
         ]);
 
-        return $alreadyVoted ? false : true;
+        return !$alreadyVoted;
     }
 
     /**
@@ -152,11 +152,9 @@ class VueDataController extends Controller
     {
         Yii::$app->response->format = Response::FORMAT_JSON;
 
-        $allSpeech = Speech::find()
+        return Speech::find()
             ->where(['status' => Speech::STATUS_ACTIVE])
             ->all();
-
-        return $allSpeech;
     }
 
     /**
@@ -172,7 +170,7 @@ class VueDataController extends Controller
             ->where(['now' => 1])
             ->one();
 
-        return $nowSpeech ? $nowSpeech : null;
+        return $nowSpeech ?: null;
     }
 
     /**
@@ -184,7 +182,7 @@ class VueDataController extends Controller
 
         $completedSpeech = SpeechTime::find()->all();
 
-        return $completedSpeech ? $completedSpeech : null;
+        return $completedSpeech ?: null;
     }
 
     /**
@@ -205,8 +203,6 @@ class VueDataController extends Controller
 
             $user->save();
         }
-
-        return;
     }
 
     /**
@@ -214,11 +210,9 @@ class VueDataController extends Controller
      */
     public function actionGetUsersOnline()
     {
-        $online = Online::find()
+        return Online::find()
             ->where(['>', 'last_activity', (time() - 60)])
             ->count();
-
-        return $online;
     }
 
     /**
@@ -229,11 +223,11 @@ class VueDataController extends Controller
     {
         Yii::$app->response->format = Response::FORMAT_JSON;
 
-        $rating = Yii::$app->db->createCommand(
-            'SELECT speech_id, COUNT(user_id) AS users FROM rating GROUP BY speech_id'
-        )->queryAll();
+        $rating = Yii::$app->db
+            ->createCommand('SELECT speech_id, COUNT(user_id) AS users FROM rating GROUP BY speech_id')
+            ->queryAll();
 
-        return $rating ? $rating : null;
+        return $rating ?: null;
     }
 
     /**

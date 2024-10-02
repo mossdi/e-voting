@@ -1,4 +1,5 @@
 <?php
+
 namespace app\components;
 
 use yii\base\Component;
@@ -8,8 +9,8 @@ use app\entities\Setting;
  * Class SettingComponent
  * @package app\components
  */
-class SettingComponent extends Component {
-
+class SettingComponent extends Component
+{
     protected $data = array();
 
     public function init() {

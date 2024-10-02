@@ -9,10 +9,7 @@ require __DIR__ . '/../vendor/yiisoft/yii2/Yii.php';
 
 $config = require __DIR__ . '/../config/web.php';
 
-$allowIPs = [
-    '31.40.98.185',
-    '87.245.184.66',
-];
+$allowIPs = [];
 
 if (in_array($_SERVER['REMOTE_ADDR'], $allowIPs) || !empty($_COOKIE['_identity']) || 1 > 0) {
     try {
